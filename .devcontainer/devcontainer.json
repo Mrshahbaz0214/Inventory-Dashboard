@@ -1,0 +1,5 @@
+{
+  "name": "Inventory Dashboard",
+  "postStartCommand": "bash .devcontainer/start.sh"
+}
+
