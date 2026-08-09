@@ -432,161 +432,63 @@ function App() {
 
           {/* ================= KPI CARDS ================= */}
 
-          <section className="stats">
+         <section className="stats">
 
-            <div className="stat-card">
+  <div className="stat-card">
+    <div className="stat-top">
+      <div className="stat-icon">📦</div>
+      <span className="stat-badge">Inventory</span>
+    </div>
 
-              <div className="stat-icon">
-                📦
-              </div>
+    <p>Total Products</p>
+    <h2>{totalProducts}</h2>
+    <span className="stat-description">
+      Items currently tracked
+    </span>
+  </div>
 
-              <div>
-                <p>Total Products</p>
-                <h2>
-                  {totalProducts}
-                </h2>
-              </div>
+  <div className="stat-card">
+    <div className="stat-top">
+      <div className="stat-icon">📊</div>
+      <span className="stat-badge">Available</span>
+    </div>
 
-            </div>
+    <p>Total Stock</p>
+    <h2>{totalStock}</h2>
+    <span className="stat-description">
+      Units available
+    </span>
+  </div>
 
-            <div className="stat-card">
+  <div className="stat-card">
+    <div className="stat-top">
+      <div className="stat-icon warning">⚠️</div>
+      <span className="stat-badge warning-badge">Attention</span>
+    </div>
 
-              <div className="stat-icon">
-                📊
-              </div>
+    <p>Low Stock</p>
+    <h2>{lowStock}</h2>
+    <span className="stat-description">
+      Products need restocking
+    </span>
+  </div>
 
-              <div>
-                <p>Total Stock</p>
-                <h2>
-                  {totalStock}
-                </h2>
-              </div>
+  <div className="stat-card">
+    <div className="stat-top">
+      <div className="stat-icon money">💰</div>
+      <span className="stat-badge">Value</span>
+    </div>
 
-            </div>
+    <p>Inventory Value</p>
+    <h2>₹{totalValue.toLocaleString()}</h2>
+    <span className="stat-description">
+      Current stock value
+    </span>
+  </div>
 
-            <div className="stat-card">
+</section>
 
-              <div className="stat-icon">
-                ⚠️
-              </div>
-
-              <div>
-                <p>Low Stock</p>
-                <h2>
-                  {lowStock}
-                </h2>
-              </div>
-
-            </div>
-
-            <div className="stat-card">
-
-              <div className="stat-icon">
-                💰
-              </div>
-
-              <div>
-                <p>Inventory Value</p>
-
-                <h2>
-                  ₹{totalValue.toLocaleString()}
-                </h2>
-
-              </div>
-
-            </div>
-
-          </section>
-
-          {/* ================= FORM ================= */}
-
-          {showForm && (
-
-            <section className="form-card">
-
-              <h2>
-                {editingId
-                  ? "✏️ Edit Product"
-                  : "➕ Add New Product"}
-              </h2>
-
-              <form
-                onSubmit={saveProduct}
-              >
-
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Product Name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  name="category"
-                  type="text"
-                  placeholder="Category"
-                  value={form.category}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  name="quantity"
-                  type="number"
-                  min="0"
-                  placeholder="Quantity"
-                  value={form.quantity}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  name="price"
-                  type="number"
-                  min="0"
-                  placeholder="Price"
-                  value={form.price}
-                  onChange={handleChange}
-                  required
-                />
-
-                <input
-                  name="supplier"
-                  type="text"
-                  placeholder="Supplier"
-                  value={form.supplier}
-                  onChange={handleChange}
-                  required
-                />
-
-                <div className="form-buttons">
-
-                  <button
-                    className="save-button"
-                    type="submit"
-                  >
-                    {editingId
-                      ? "💾 Update Product"
-                      : "💾 Save Product"}
-                  </button>
-
-                  <button
-                    type="button"
-                    className="cancel-button"
-                    onClick={cancelForm}
-                  >
-                    Cancel
-                  </button>
-
-                </div>
-
-              </form>
-
-            </section>
-
-          )}
+          )
 
           {/* ================= LOW STOCK ALERT ================= */}
 
