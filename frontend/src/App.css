@@ -1049,3 +1049,204 @@ footer {
     flex-wrap: wrap;
   }
 }
+/* ========================================
+   FINAL PROFESSIONAL POLISH
+======================================== */
+
+/* Smooth page appearance */
+.main-content {
+  animation: pageFadeIn 0.35s ease-out;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Better dashboard cards */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: "";
+  position: absolute;
+  right: -25px;
+  top: -25px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #eff6ff;
+  opacity: 0.6;
+}
+
+/* Better table header */
+.table-header {
+  background: #ffffff;
+}
+
+/* Cleaner table rows */
+tbody tr {
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Better buttons */
+.add-button,
+.edit-button,
+.delete-button,
+.save-button,
+.cancel-button {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+.add-button:active,
+.edit-button:active,
+.delete-button:active,
+.save-button:active,
+.cancel-button:active {
+  transform: scale(0.97);
+}
+
+/* Better input appearance */
+input,
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Better mobile spacing */
+@media (max-width: 650px) {
+  .stat-card {
+    padding: 16px;
+  }
+
+  .dashboard-card,
+  .supplier-card,
+  .table-card,
+  .form-card {
+    border-radius: 10px;
+  }
+}
+/* ========================================
+   PROFESSIONAL PRODUCT TABLE
+======================================== */
+
+td strong {
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.table-container table td:first-child {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.table-container table td:nth-child(3) {
+  color: #475569;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.table-container table td:nth-child(6) {
+  color: #475569;
+  font-size: 12px;
+}
+
+.table-container table td:nth-child(5) {
+  font-weight: 700;
+  color: #0f172a;
+}
+/* ========================================
+   PROFESSIONAL SIDEBAR / NAVIGATION
+======================================== */
+
+.sidebar {
+  background: #0f172a;
+  color: white;
+  padding: 24px 16px;
+  min-height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  padding-left: 12px;
+}
+
+.sidebar a,
+.sidebar button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  color: #cbd5e1;
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.sidebar a.active,
+.sidebar button.active {
+  background: #2563eb;
+  color: white;
+}
+
+.sidebar .nav-section {
+  margin-top: 24px;
+  margin-bottom: 8px;
+  padding-left: 14px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
