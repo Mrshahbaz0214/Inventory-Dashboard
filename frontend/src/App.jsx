@@ -398,7 +398,87 @@ function App() {
           </div>
 
         </header>
+{showForm && (
+  <div className="product-form-overlay">
+    <div className="product-form">
 
+      <h2>{editingId ? "Edit Product" : "Add Product"}</h2>
+
+      <form onSubmit={saveProduct}>
+
+        <input
+          type="text"
+          placeholder="Product Name"
+          value={form.name}
+          onChange={(e) =>
+            setForm({ ...form, name: e.target.value })
+          }
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Category"
+          value={form.category}
+          onChange={(e) =>
+            setForm({ ...form, category: e.target.value })
+          }
+          required
+        />
+
+        <input
+          type="number"
+          placeholder="Quantity"
+          value={form.quantity}
+          onChange={(e) =>
+            setForm({ ...form, quantity: e.target.value })
+          }
+          required
+        />
+
+        <input
+          type="number"
+          placeholder="Price"
+          value={form.price}
+          onChange={(e) =>
+            setForm({ ...form, price: e.target.value })
+          }
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Supplier"
+          value={form.supplier}
+          onChange={(e) =>
+            setForm({ ...form, supplier: e.target.value })
+          }
+          required
+        />
+
+        <div className="form-actions">
+
+          <button
+            type="button"
+            onClick={() => {
+              resetForm();
+              setShowForm(false);
+            }}
+          >
+            Cancel
+          </button>
+
+          <button type="submit">
+            {editingId ? "Update Product" : "Save Product"}
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+)}
         {/* ================= DASHBOARD CONTENT ================= */}
 
         <div className="dashboard-content">
