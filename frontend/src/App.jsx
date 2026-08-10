@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+axios.defaults.baseURL = "https://inventory-dashboard-9y7t.onrender.com";
 import {
   BarChart,
   Bar,
