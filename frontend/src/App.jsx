@@ -33,7 +33,7 @@ function App() {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("/api/products/");
+      const response = await axios.get(`${API_URL}/api/products/`);
       const data = response.data;
 
       if (Array.isArray(data)) {
@@ -95,14 +95,14 @@ function App() {
 
       if (editingId) {
         await axios.put(
-          `/api/products/${editingId}/`,
+          `${API_URL}/api/products/${editingId}/`,
           productData
         );
 
         alert("Product updated successfully!");
       } else {
         await axios.post(
-          "/api/products/",
+          `${API_URL}/api/products/`,
           productData
         );
 
@@ -155,7 +155,7 @@ function App() {
     }
 
     try {
-      await axios.delete(`/api/products/${id}/`);
+      await axios.delete(`${API_URL}/api/products/${id}/`);
 
       alert("Product deleted successfully!");
 
