@@ -95,16 +95,16 @@ function App() {
 
       if (editingId) {
         await axios.put(
-          `${API_URL}/api/products/${editingId}/`,
-          productData
-        );
+  `${API_URL}/api/products/${editingId}/`,
+  productData
+);
 
         alert("Product updated successfully!");
       } else {
         await axios.post(
-          `${API_URL}/api/products/`,
-          productData
-        );
+  `${API_URL}/api/products/`,
+  productData
+);
 
         alert("Product added successfully!");
       }
@@ -147,7 +147,9 @@ function App() {
 
   const deleteProduct = async (id) => {
   try {
-    await axios.delete(`/api/products/${id}/`);
+    await axios.delete(
+  `${API_URL}/api/products/${id}/`
+);
 
     alert("Product deleted successfully!");
 
