@@ -146,25 +146,17 @@ function App() {
   // =========================
 
   const deleteProduct = async (id) => {
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this product?"
-    );
+  try {
+    await axios.delete(`/api/products/${id}/`);
 
-    if (!confirmed) {
-      return;
-    }
+    alert("Product deleted successfully!");
 
-    try {
-      await axios.delete(`${API_URL}/api/products/${id}/`);
-
-      alert("Product deleted successfully!");
-
-      await fetchProducts();
-    } catch (error) {
-      console.error("DELETE ERROR:", error);
-      alert("Could not delete product.");
-    }
-  };
+    await fetchProducts();
+  } catch (error) {
+    console.error("DELETE ERROR:", error);
+    alert("Could not delete product.");
+  }
+};
 
   // =========================
   // CANCEL
